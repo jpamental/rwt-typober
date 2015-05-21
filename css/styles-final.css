@@ -3,6 +3,7 @@
 /* 400px */
 /* 700px */
 /* 900px */
+/* 1100px */
 /* 1300px */
 /* Set theme mixins here */
 /*! normalize.css v1.0.1 | MIT License | git.io/normalize */
@@ -958,13 +959,21 @@ body {
   .layout:after {
     clear: both; }
   .layout.border-left {
-    border-left: 3em solid #6F6F6E;
-    padding-right: 3em; }
+    border-left: 1em solid #6F6F6E;
+    padding-right: 1em; }
+    @media (min-width: 43.75em) {
+      .layout.border-left {
+        border-left-width: 3em;
+        padding-right: 3em; } }
     .layout.border-left.half {
       padding-right: 0; }
   .layout.border-right {
-    border-right: 3em solid #6F6F6E;
-    padding-left: 3em; }
+    border-right: 1em solid #6F6F6E;
+    padding-left: 1em; }
+    @media (min-width: 43.75em) {
+      .layout.border-right {
+        border-right-width: 3em;
+        padding-left: 3em; } }
     .layout.border-right.half {
       padding-left: 0; }
   .layout.blue {
@@ -977,8 +986,9 @@ body {
     border-color: #DFC066; }
   .layout.orange {
     border-color: #ED6D0F; }
-  .layout .half, .layout.half {
-    width: 50%; }
+  @media (min-width: 43.75em) {
+    .layout .half, .layout.half {
+      width: 50%; } }
   .layout .two-thirds {
     width: 66%; }
   .layout .full-width {
@@ -999,24 +1009,85 @@ body {
     float: right;
     clear: right; }
   .layout .float-left {
-    float: left;
-    margin-right: -50%;
-    width: 47.5%;
     padding-right: 1em;
     text-align: right; }
+    @media (min-width: 43.75em) {
+      .layout .float-left {
+        float: left;
+        margin-right: -50%;
+        width: 47.5%; } }
   .layout .float-right {
-    float: right;
-    margin-left: -50%;
-    width: 47.5%;
     padding-left: 1em;
     text-align: left; }
+    @media (min-width: 43.75em) {
+      .layout .float-right {
+        float: right;
+        margin-left: -50%;
+        width: 47.5%; } }
 
-p.right {
-  padding-right: 5em; }
-p.left {
-  padding-left: 5em; }
-  .border-right p.left {
-    padding-left: 2em; }
+/* paragraph styles */
+p {
+  -moz-font-feature-settings: "c2sc=0", "calt=0", "clig=0", "dlig=0", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
+  -moz-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  -webkit-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  -ms-font-feature-settings: "c2sc=0", "calt=0", "clig=0", "dlig=0", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
+  -o-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  padding-bottom: 1em; }
+  p.right {
+    padding-left: 1em;
+    padding-right: 1em; }
+    @media (min-width: 43.75em) {
+      .border-left p.right {
+        padding-left: 0;
+        padding-right: 5em; } }
+    @media (min-width: 43.75em) {
+      p.right {
+        padding-left: 0;
+        padding-right: 5em; } }
+  p.left {
+    padding-left: 1em; }
+    @media (min-width: 43.75em) {
+      p.left {
+        padding-left: 5em; } }
+    .border-right p.left {
+      padding-right: 1em; }
+      @media (min-width: 43.75em) {
+        .border-right p.left {
+          padding-left: 2em; } }
+  p.intro {
+    font-size: 1.25em;
+    color: #586F91; }
+  p.opening.blue {
+    position: relative;
+    text-indent: 3em; }
+    @media (min-width: 43.75em) {
+      p.opening.blue {
+        text-indent: 0; } }
+    p.opening.blue:before {
+      content: url(../images/arrow_right_blue.png);
+      position: absolute;
+      float: left;
+      left: -3.5em; }
+  p.opening.rust {
+    position: relative;
+    text-indent: 3.5em; }
+    @media (min-width: 43.75em) {
+      p.opening.rust {
+        text-indent: 0; } }
+    p.opening.rust:before {
+      content: url(../images/arrow_right_rust.png);
+      position: absolute;
+      float: left;
+      left: -4.25em;
+      top: -0.25em; }
+  p.closing {
+    position: relative; }
+    p.closing:after {
+      content: url(../images/arrow_left.png);
+      position: absolute;
+      bottom: 0;
+      right: -5em; }
 
 blockquote.rust p {
   color: #C06B54; }
@@ -1049,11 +1120,17 @@ figure {
   figure.pad-bottom {
     margin-bottom: 2em; }
   .border-right figure.full-width {
-    margin-left: -3em;
+    margin-left: -1em;
     width: auto; }
+    @media (min-width: 43.75em) {
+      .border-right figure.full-width {
+        margin-left: -3em; } }
   .border-right figure.half.left {
-    margin-left: -3em;
-    width: 55%; }
+    margin-left: -1em; }
+    @media (min-width: 43.75em) {
+      .border-right figure.half.left {
+        margin-left: -3em;
+        width: 55%; } }
 
 figcaption {
   font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
@@ -1061,82 +1138,68 @@ figcaption {
   font-style: italic;
   color: #6F6F6E;
   padding: 0.25em; }
-  figcaption.right-side {
-    position: absolute;
-    right: -38%;
-    top: 40%;
-    width: 62.5%;
-    -moz-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg); }
+  @media (min-width: 43.75em) {
+    figcaption.right-side {
+      position: absolute;
+      right: -38%;
+      top: 40%;
+      width: 62.5%;
+      -moz-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg); } }
   figcaption.above {
     position: absolute;
     top: -3em;
     left: 0; }
-  figcaption.right-side-above {
-    position: absolute;
-    right: -11%;
-    top: -29%;
-    width: 30%;
-    -moz-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg); }
-
-/* paragraph styles */
-p.intro {
-  font-size: 1.25em;
-  color: #586F91; }
-p.opening.blue:before {
-  content: url(../images/arrow_right_blue.png);
-  position: absolute;
-  float: left;
-  margin-left: -4em; }
-p.opening.rust:before {
-  content: url(../images/arrow_right_rust.png);
-  position: absolute;
-  float: left;
-  margin-left: -5em; }
-p.closing {
-  position: relative; }
-  p.closing:after {
-    content: url(../images/arrow_left.png);
-    position: absolute;
-    bottom: 0;
-    right: -5em; }
-
-/* open type features */
-p {
-  -moz-font-feature-settings: "c2sc=0", "calt=0", "clig=0", "dlig=0", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
-  -moz-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
-  -webkit-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
-  -ms-font-feature-settings: "c2sc=0", "calt=0", "clig=0", "dlig=0", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
-  -o-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
-  font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
-  padding-bottom: 1em; }
+  @media (min-width: 43.75em) {
+    figcaption.right-side-above {
+      position: absolute;
+      right: -11%;
+      top: -29%;
+      width: 30%;
+      -moz-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg); } }
 
 .page > header {
   margin-bottom: 1em; }
   .page > header h1 {
     font-family: "MTI Letter Gothic W01", Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-    font-size: 1.5em;
-    margin-bottom: 1.5em; }
+    font-size: 1.25em; }
+    @media (min-width: 43.75em) {
+      .page > header h1 {
+        font-size: 1.5em;
+        margin-bottom: 1.5em; } }
 
 article > header {
-  padding-top: 2em; }
+  padding-top: 0.5em; }
+  @media (min-width: 43.75em) {
+    article > header {
+      padding-top: 2em; } }
   article > header figure {
     margin-bottom: 0; }
 
 .title {
   font-family: "ITC Magnifico W01", Georgia, "Times New Roman", Times, serif;
-  font-size: 4vw;
+  font-size: 7vw;
   color: #CBBBA0;
   float: left;
-  width: 100%;
+  line-height: 1;
   margin-right: -100%;
-  margin-top: -0.75em; }
+  margin-bottom: 1em;
+  padding-left: .5em;
+  width: 100%; }
+  @media (min-width: 43.75em) {
+    .title {
+      font-size: 4vw;
+      margin-top: -0.75em;
+      padding-left: 0; } }
   .title .second-half {
     display: block;
-    font-size: 3.25em; }
+    font-size: 2.25em; }
+    @media (min-width: 43.75em) {
+      .title .second-half {
+        font-size: 3.25em; } }
 
 .author {
   display: block;
@@ -1145,7 +1208,10 @@ article > header {
   text-align: right;
   width: 20em;
   float: right;
-  padding-right: 3em; }
+  padding-right: 1em; }
+  @media (min-width: 43.75em) {
+    .author {
+      padding-right: 3em; } }
   .wf-inactive .author {
     font-family: Georgia, "Times New Roman", Times, serif;
     margin-bottom: 0.05em; }
@@ -1165,13 +1231,16 @@ blockquote {
     padding-top: 0.5em;
     padding-bottom: 1em;
     padding-right: 0;
-    font-size: 2.25em;
+    font-size: 1.5em;
     line-height: 1.2em;
     text-indent: 0;
     font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
     font-style: italic;
     font-weight: 200;
     position: relative; }
+    @media (min-width: 43.75em) {
+      blockquote p {
+        font-size: 2.25em; } }
     blockquote p:before {
       content: "\201C";
       font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
@@ -1201,9 +1270,10 @@ blockquote {
     position: absolute;
     bottom: 0.85em;
     right: -0.35em; }
-  .layout blockquote.float-right {
-    width: 40%;
-    margin-right: 10%; }
+  @media (min-width: 43.75em) {
+    .layout blockquote.float-right {
+      width: 40%;
+      margin-right: 10%; } }
 
 /* Make sure this is last - helps correct for an orientation scale bug in iOS */
 @media screen and (orientation: landscape) and (device-width: 320px) and (device-height: 480px) {
