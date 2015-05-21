@@ -83,6 +83,39 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/images\/arrow_left.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1183,
+		"inputAbbreviatedPath": "\/images\/arrow_left.png",
+		"outputAbbreviatedPath": "\/images\/arrow_left.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/arrow_right_blue.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1149,
+		"inputAbbreviatedPath": "\/images\/arrow_right_blue.png",
+		"outputAbbreviatedPath": "\/images\/arrow_right_blue.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/arrow_right_rust.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1138,
+		"inputAbbreviatedPath": "\/images\/arrow_right_rust.png",
+		"outputAbbreviatedPath": "\/images\/arrow_right_rust.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/bile_beans1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

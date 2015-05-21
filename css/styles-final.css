@@ -407,6 +407,9 @@ table {
 /*
 font-family:'Ysobel W01';
 font-family:'ITC Magnifico W01';
+font-family:'MTI Letter Gothic W01';
+font-family:'Cardamon W04';
+
 
 
 
@@ -518,12 +521,12 @@ html {
 		margin-bottom	
 */
 body {
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
   font-size: 1em; }
 
 p, caption, th, td, input, textarea, legend, fieldset {
   color: #6F6F6E;
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
   font-size: 1em;
   letter-spacing: normal;
   line-height: 1.625;
@@ -556,7 +559,7 @@ p, caption, th, td, input, textarea, legend, fieldset {
 
 h1 {
   color: #2f2f2f;
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
   font-weight: normal;
   font-style: normal;
   font-size: 2em;
@@ -605,7 +608,7 @@ h1 {
 
 h2 {
   color: #2f2f2f;
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
   font-weight: 500;
   font-size: 1.625em;
   letter-spacing: normal;
@@ -663,7 +666,7 @@ h2 {
 
 h3 {
   color: #2f2f2f;
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
   font-weight: 500;
   font-size: 1.3125em;
   letter-spacing: normal;
@@ -716,7 +719,7 @@ h3 {
 
 h4 {
   color: #2f2f2f;
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
   font-size: 1.125em;
   letter-spacing: normal;
   line-height: 1.22222;
@@ -769,13 +772,13 @@ h4 {
 
 h5 {
   color: #2f2f2f;
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif; }
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif; }
   .wf-inactive h5 {
     font-family: Georgia, "Times New Roman", Times, serif; }
 
 h6 {
   color: #2f2f2f;
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif; }
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif; }
   .wf-inactive h6 {
     font-family: Georgia, "Times New Roman", Times, serif; }
 
@@ -946,8 +949,8 @@ body {
 
 .layout {
   clear: both;
-  margin-bottom: 0;
-  padding-bottom: 1em;
+  margin-bottom: 2em;
+  padding-bottom: 0;
   *zoom: 1; }
   .layout:before, .layout:after {
     content: " ";
@@ -1033,14 +1036,18 @@ img {
   height: auto; }
 
 figure {
-  margin-bottom: 1em;
+  margin-bottom: 0;
   position: relative; }
   figure.content-narrow {
     padding-right: 10%; }
     figure.content-narrow.left {
       padding-left: 5em; }
-      .border-right figure.content-narrow.left {
-        padding-left: 2em; }
+      .border-right figure.content-narrow.left.half {
+        padding-left: 5em; }
+    .border-right figure.content-narrow {
+      margin-left: 0; }
+  figure.pad-bottom {
+    margin-bottom: 2em; }
   .border-right figure.full-width {
     margin-left: -3em;
     width: auto; }
@@ -1049,10 +1056,11 @@ figure {
     width: 55%; }
 
 figcaption {
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
   font-size: 0.75em;
   font-style: italic;
-  color: #6F6F6E; }
+  color: #6F6F6E;
+  padding: 0.25em; }
   figcaption.right-side {
     position: absolute;
     right: -38%;
@@ -1073,36 +1081,45 @@ figcaption {
     -moz-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg); }
-  figcaption.padded {
-    padding: 0.15em; }
 
 /* paragraph styles */
 p.intro {
   font-size: 1.25em;
   color: #586F91; }
+p.opening.blue:before {
+  content: url(../images/arrow_right_blue.png);
+  position: absolute;
+  float: left;
+  margin-left: -4em; }
+p.opening.rust:before {
+  content: url(../images/arrow_right_rust.png);
+  position: absolute;
+  float: left;
+  margin-left: -5em; }
+p.closing {
+  position: relative; }
+  p.closing:after {
+    content: url(../images/arrow_left.png);
+    position: absolute;
+    bottom: 0;
+    right: -5em; }
 
 /* open type features */
 p {
+  -moz-font-feature-settings: "c2sc=0", "calt=0", "clig=0", "dlig=0", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
+  -moz-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  -webkit-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  -ms-font-feature-settings: "c2sc=0", "calt=0", "clig=0", "dlig=0", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
+  -o-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  font-feature-settings: "c2sc" 0, "calt" 0, "clig" 0, "dlig" 0, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
   padding-bottom: 1em; }
-  .article-text > p:first-of-type {
-    text-indent: 0; }
-  .article-text > p:last-of-type:after {
-    /*
-    			content: "\00A7";
-    			text-align: center;
-    			display: block;
-    			margin: 1em 0;
-    			text-shadow: 2px 0 0 #ffffff, 2px 0 0 #ffffff, -2px 0 0 #ffffff, -2px 0 0 #ffffff;
-    			@include background-image(linear-gradient(to bottom, rgba(#000000, 0) 75%, rgba(#000000, 0.85) 75%, transparent));
-    			background-repeat: repeat-x;
-    			background-size: 2px 2px;
-    			background-position: 0 0.55em;
-    */ }
 
 .page > header {
   margin-bottom: 1em; }
   .page > header h1 {
-    margin: 0.25em 0 0.15em 0; }
+    font-family: "MTI Letter Gothic W01", Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 1.5em; }
 
 article > header {
   padding-top: 2em; }
@@ -1123,7 +1140,7 @@ article > header {
 
 .author {
   display: block;
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   text-align: right;
   width: 20em;
@@ -1135,7 +1152,13 @@ article > header {
 
 /* Blockquote styles */
 blockquote {
-  margin: 1em auto; }
+  margin: 1em auto;
+  -moz-font-feature-settings: "c2sc=0", "calt=0", "clig=1", "dlig=1", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
+  -moz-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 1, "dlig" 1, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  -webkit-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 1, "dlig" 1, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  -ms-font-feature-settings: "c2sc=0", "calt=0", "clig=1", "dlig=1", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
+  -o-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 1, "dlig" 1, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
+  font-feature-settings: "c2sc" 0, "calt" 0, "clig" 1, "dlig" 1, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0; }
   blockquote p {
     width: 90%;
     margin: 0 auto 0 auto;
@@ -1145,13 +1168,13 @@ blockquote {
     font-size: 2.25em;
     line-height: 1.2em;
     text-indent: 0;
-    font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+    font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
     font-style: italic;
     font-weight: 200;
     position: relative; }
     blockquote p:before {
       content: "\201C";
-      font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+      font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
       font-size: 1.5em;
       font-style: italic;
       font-weight: 200;
@@ -1160,7 +1183,7 @@ blockquote {
       left: -0.45em; }
     blockquote p:after {
       content: "\201D";
-      font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+      font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
       font-size: 1.5em;
       font-style: italic;
       font-weight: 200;
@@ -1176,7 +1199,7 @@ blockquote {
     top: 0.2em; }
   blockquote.float-left p:after {
     position: absolute;
-    bottom: 1em;
+    bottom: 0.85em;
     right: -0.35em; }
   .layout blockquote.float-right {
     width: 40%;
