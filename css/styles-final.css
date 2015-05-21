@@ -955,9 +955,15 @@ body {
   .layout:after {
     clear: both; }
   .layout.border-left {
-    border-left: 3em solid #6F6F6E; }
+    border-left: 3em solid #6F6F6E;
+    padding-right: 3em; }
+    .layout.border-left.half {
+      padding-right: 0; }
   .layout.border-right {
-    border-right: 3em solid #6F6F6E; }
+    border-right: 3em solid #6F6F6E;
+    padding-left: 3em; }
+    .layout.border-right.half {
+      padding-left: 0; }
   .layout.blue {
     border-color: #586F91; }
   .layout.blue-pale {
@@ -968,7 +974,7 @@ body {
     border-color: #DFC066; }
   .layout.orange {
     border-color: #ED6D0F; }
-  .layout .half {
+  .layout .half, .layout.half {
     width: 50%; }
   .layout .two-thirds {
     width: 66%; }
@@ -983,6 +989,12 @@ body {
     float: right; }
   .layout .clear {
     clear: both; }
+  .layout.float-left {
+    float: left;
+    clear: left; }
+  .layout.float-right {
+    float: right;
+    clear: right; }
   .layout .float-left {
     float: left;
     margin-right: -50%;
@@ -1000,11 +1012,8 @@ p.right {
   padding-right: 5em; }
 p.left {
   padding-left: 5em; }
-
-figure.content-narrow {
-  padding-right: 10%; }
-  figure.content-narrow.left {
-    padding-left: 5em; }
+  .border-right p.left {
+    padding-left: 2em; }
 
 blockquote.rust p {
   color: #C06B54; }
@@ -1024,14 +1033,48 @@ img {
   height: auto; }
 
 figure {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   position: relative; }
+  figure.content-narrow {
+    padding-right: 10%; }
+    figure.content-narrow.left {
+      padding-left: 5em; }
+      .border-right figure.content-narrow.left {
+        padding-left: 2em; }
+  .border-right figure.full-width {
+    margin-left: -3em;
+    width: auto; }
+  .border-right figure.half.left {
+    margin-left: -3em;
+    width: 55%; }
 
 figcaption {
   font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
-  font-size: 0.875em;
+  font-size: 0.75em;
   font-style: italic;
   color: #6F6F6E; }
+  figcaption.right-side {
+    position: absolute;
+    right: -38%;
+    top: 40%;
+    width: 62.5%;
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  figcaption.above {
+    position: absolute;
+    top: -3em;
+    left: 0; }
+  figcaption.right-side-above {
+    position: absolute;
+    right: -11%;
+    top: -29%;
+    width: 30%;
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  figcaption.padded {
+    padding: 0.15em; }
 
 /* paragraph styles */
 p.intro {
@@ -1040,12 +1083,6 @@ p.intro {
 
 /* open type features */
 p {
-  -moz-font-feature-settings: "c2sc=0", "calt=0", "clig=1", "dlig=1", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
-  -moz-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 1, "dlig" 1, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
-  -webkit-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 1, "dlig" 1, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
-  -ms-font-feature-settings: "c2sc=0", "calt=0", "clig=1", "dlig=1", "frac=0", "hist=0", "hlig=0", "kern= 1", "liga=1", "nalt=0", "salt=0", "smcp=0", "ss01=0", "ss02=0", "ss03=0", "ss04=0", "ss05=0", "swsh=0", "zero=0",  "snum=0";
-  -o-font-feature-settings: "c2sc" 0, "calt" 0, "clig" 1, "dlig" 1, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
-  font-feature-settings: "c2sc" 0, "calt" 0, "clig" 1, "dlig" 1, "frac" 0, "hist" 0, "hlig" 0, "kern" 1, "liga" 1, "nalt" 0, "salt" 0, "smcp" 0, "ss01" 0, "ss02" 0, "ss03" 0, "ss04" 0, "ss05" 0, "swsh" 0, "zero" 0,   "snum" 0;
   padding-bottom: 1em; }
   .article-text > p:first-of-type {
     text-indent: 0; }
@@ -1067,24 +1104,34 @@ p {
   .page > header h1 {
     margin: 0.25em 0 0.15em 0; }
 
-.author {
-  display: block;
-  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
-  font-style: italic; }
-  .wf-inactive .author {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    margin-bottom: 0.05em; }
-
-article > header figure {
-  margin-bottom: 0; }
+article > header {
+  padding-top: 2em; }
+  article > header figure {
+    margin-bottom: 0; }
 
 .title {
   font-family: "ITC Magnifico W01", Georgia, "Times New Roman", Times, serif;
-  font-size: 6vw;
-  color: #CBBBA0; }
+  font-size: 4vw;
+  color: #CBBBA0;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  margin-top: -0.75em; }
   .title .second-half {
     display: block;
-    font-size: 2em; }
+    font-size: 3.25em; }
+
+.author {
+  display: block;
+  font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  text-align: right;
+  width: 20em;
+  float: right;
+  padding-right: 3em; }
+  .wf-inactive .author {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin-bottom: 0.05em; }
 
 /* Blockquote styles */
 blockquote {
@@ -1094,8 +1141,9 @@ blockquote {
     margin: 0 auto 0 auto;
     padding-top: 0.5em;
     padding-bottom: 1em;
-    font-size: 1.5em;
-    line-height: 1.4em;
+    padding-right: 0;
+    font-size: 2.25em;
+    line-height: 1.2em;
     text-indent: 0;
     font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
     font-style: italic;
@@ -1108,8 +1156,8 @@ blockquote {
       font-style: italic;
       font-weight: 200;
       position: absolute;
-      top: 0;
-      left: -0.55em; }
+      top: 0.45em;
+      left: -0.45em; }
     blockquote p:after {
       content: "\201D";
       font-family: "Ysobel W01", Georgia, "Times New Roman", Times, serif;
@@ -1121,6 +1169,18 @@ blockquote {
       right: 0.05em;
       display: inline;
       line-height: .2em; }
+  blockquote.float-left p:before {
+    display: inline;
+    position: relative;
+    left: -0.1em;
+    top: 0.2em; }
+  blockquote.float-left p:after {
+    position: absolute;
+    bottom: 1em;
+    right: -0.35em; }
+  .layout blockquote.float-right {
+    width: 40%;
+    margin-right: 10%; }
 
 /* Make sure this is last - helps correct for an orientation scale bug in iOS */
 @media screen and (orientation: landscape) and (device-width: 320px) and (device-height: 480px) {

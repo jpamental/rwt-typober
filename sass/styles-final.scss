@@ -109,9 +109,17 @@ body {
 	@include clearfix;
 	&.border-left {
 		border-left: 3em solid $color-gray;
+		padding-right: 3em;
+		&.half {
+			padding-right: 0;
+		}
 	}
 	&.border-right {
 		border-right: 3em solid $color-gray;
+		padding-left: 3em;
+		&.half {
+			padding-left: 0;
+		}
 	}
 	&.blue {
 		border-color: $color-blue;
@@ -128,7 +136,8 @@ body {
 	&.orange {
 		border-color: $color-orange;
 	}
-	.half {
+	.half,
+	&.half {
 		width: 50%;
 	}
 	.two-thirds {
@@ -148,6 +157,14 @@ body {
 	}
 	.clear {
 		clear: both;
+	}
+	&.float-left {
+		float: left;
+		clear: left;
+	}
+	&.float-right {
+		float: right;
+		clear: right;
 	}
 	.float-left {
 		float: left;
@@ -170,13 +187,8 @@ p {
 	}
 	&.left {
 		padding-left: 5em;
-	}
-}
-figure {
-	&.content-narrow {
-		padding-right: 10%;
-		&.left {
-			padding-left: 5em;
+		.border-right & {
+			padding-left: 2em;
 		}
 	}
 }
@@ -217,15 +229,53 @@ img {
 
 
 figure {
-	margin-bottom: 2em;
+	&.content-narrow {
+		padding-right: 10%;
+		&.left {
+			padding-left: 5em;
+			.border-right & {
+				padding-left: 2em;
+			}
+		}
+	}
+	margin-bottom: 1em;
 	position: relative;
-	
+	.border-right &.full-width {
+		margin-left: -3em;
+		width: auto;
+	}
+	.border-right &.half.left {
+		margin-left: -3em; 
+		width: 55%;
+	}
 }
 figcaption {
 	font-family: $serif;
-	font-size: (14 / $text-base-size) * 1em; 
+	font-size: (12 / $text-base-size) * 1em; 
 	font-style: italic;
 	color: $color-gray;
+	&.right-side {
+		position: absolute; 
+		right: -38%;
+		top: 40%;
+		width: 62.5%;
+		@include transform(rotate(-90deg), origin(top, right));
+	}
+	&.above {
+		position: absolute; 
+		top: -3em; 
+		left: 0;
+	}
+	&.right-side-above {
+		position: absolute; 
+		right: -11%;
+		top: -29%;
+		width: 30%;
+		@include transform(rotate(-90deg), origin(top, right));
+	}
+	&.padded {
+		padding: 0.15em;
+	}
 }
 
 
@@ -238,7 +288,7 @@ p {
 }
 /* open type features */
 p {
-	@include otfeatures($liga: 1, $clig: 1, $dlig: 1, $kern: 1);
+	//@include otfeatures($liga: 1, $clig: 1, $dlig: 1, $kern: 1);
 	padding-bottom: 1em;
 	.article-text > &:first-of-type {
 		text-indent: 0;
@@ -270,17 +320,9 @@ h1 {
 		margin: 0.25em 0 0.15em 0;
 	}
 }
-.author {
-	display: block;
-	font-family: $serif;
-	font-style: italic;
-	.wf-inactive & {
-		font-family: $serif-fallback;
-		margin-bottom: 0.05em;
-	}
-}
 
 article > header {
+	padding-top: 2em;
 	figure {
 		margin-bottom: 0;
 	}
@@ -288,17 +330,35 @@ article > header {
 
 .title {
 	font-family: $display;
-	font-size: 6vw;
-	color: $color-gold;
+	font-size: 4vw;
+	color: $color-gold; 
+	float: left; 
+	width: 100%; 
+	margin-right: -100%; 
+	margin-top: -0.75em;
 	.second-half {
 		display: block;
-		font-size: 2em;
+		font-size: 3.25em;
 	}
 	label {
 		
 	}
 	.wf-inactive & {
 		
+	}
+}
+
+.author {
+	display: block;
+	font-family: $serif;
+	font-style: italic; 
+	text-align: right; 
+	width: 20em; 
+	float: right;
+	padding-right: 3em;
+	.wf-inactive & {
+		font-family: $serif-fallback;
+		margin-bottom: 0.05em;
 	}
 }
 
@@ -311,8 +371,9 @@ blockquote {
 		margin: 0 auto 0 auto; 
 		padding-top: 0.5em;
 		padding-bottom: 1em;
-		font-size: 1.5em; 
-		line-height: 1.4em; 
+		padding-right: 0;
+		font-size: 2.25em; 
+		line-height: 1.2em; 
 		text-indent: 0;
 		font-family: $serif; 
 		font-style: italic; 
@@ -326,8 +387,8 @@ blockquote {
 			font-weight: 200;
 			//color: lighten($text-color, 15%);
 			position: absolute;
-			top: 0;
-			left: -0.55em;
+			top: 0.45em;
+			left: -0.45em;
 		    
 		}
 		
@@ -344,6 +405,25 @@ blockquote {
 			display: inline;
 		    line-height: .2em;
 		}
+	}
+	&.float-left {
+		p {
+			&:before {
+				display: inline;
+				position: relative;
+				left: -0.1em;
+				top: 0.2em;
+			}
+			&:after {
+				position: absolute; 
+				bottom: 1em;
+				right: -0.35em;
+			}
+		}
+	}
+	.layout &.float-right {
+		width: 40%; 
+		margin-right: 10%;
 	}
 }
 
