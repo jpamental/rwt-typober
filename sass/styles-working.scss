@@ -1,0 +1,463 @@
+/* Import _base.scss variables */
+@import "base";
+
+@import "custom"; 
+
+@import "normalize";
+
+$sans-serif-fallback: Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+$serif-fallback: Georgia, "Times New Roman", Times, serif;
+
+$sans-serif: 'MTI Letter Gothic W01', $sans-serif-fallback;
+$serif: 'Cardamon W04', $serif-fallback;
+$display: 'ITC Magnifico W01', $serif-fallback;
+$initial-cap: 'ITC Magnifico W01', $serif-fallback;
+
+
+/******** HELPERS ********/
+
+/* apply a natural box layout model to all elements */
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+/* end update for semantics */
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 175, ../sass/h5bp_main.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 180, ../sass/h5bp_main.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+/* line 189, ../sass/h5bp_main.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* useful resets from HTML5 BoilerPlate */
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+/* line 59, ../sass/h5bp_main.scss */
+img {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 67, ../sass/h5bp_main.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 77, ../sass/h5bp_main.scss */
+textarea {
+  resize: vertical;
+}
+
+p, caption, th, td, input, textarea, legend, fieldset {
+	color: $text-color;
+	font-family: $serif; 
+	font-size: 1em; 
+}
+
+h1 {
+	color: $header-color;
+	font-family: $serif; 
+}
+
+h2 {
+	color: $header-color;
+	font-family: $serif; 
+}
+
+h3 {
+	color: $header-color;
+	font-family: $serif; 
+}
+
+h4 {
+	color: $header-color;
+	font-family: $serif; 
+}
+
+h5 {
+	color: $header-color;
+	font-family: $serif; 
+}
+
+h6 {
+	color: $header-color;
+	font-family: $serif; 
+}
+
+
+
+/* Minimal page design to provide visual structure */
+
+/* layout styles */
+body {
+	background-color: $body-background;
+}
+
+.page {
+	background-color: #fdfdfd;
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+.layout {
+	clear: both;
+	margin-bottom: 2em;
+	padding-bottom: 0;
+	@include clearfix;
+	&.border-left {
+		border-left: 1em solid $color-gray;
+		padding-right: 1em;
+		&.half {
+			padding-right: 0;
+		}
+	}
+	&.border-right {
+		border-right: 1em solid $color-gray;
+		padding-left: 1em;
+		&.half {
+			padding-left: 0;
+		}
+	}
+	&.blue {
+		border-color: $color-blue;
+	}
+	&.blue-pale {
+		border-color: $color-blue-pale;
+	}
+	&.rust {
+		border-color: $color-rust;
+	}
+	&.gold-pale {
+		border-color: $color-gold-pale;
+	}
+	&.orange {
+		border-color: $color-orange;
+	}
+	.half,
+	&.half {
+		//width: 100%;
+	}
+	.two-thirds {
+		width: 66%;
+	}
+	.full-width {
+		clear: both;
+		width: 100%;
+	}
+	.left {
+		clear: left;
+		float: left;
+	}
+	.right {
+		clear: right;
+		float: right;
+	}
+	.clear {
+		clear: both;
+	}
+	&.float-left {
+		float: left;
+		clear: left;
+	}
+	&.float-right {
+		float: right;
+		clear: right;
+	}
+	.float-left {
+		padding-right: 1em;
+		text-align: right;
+	}
+	.float-right {
+		padding-left: 1em;
+		text-align: left;
+	}
+}
+
+/* heading and title styles */
+.page > header {
+	margin-bottom: 1em;
+	h1 {
+		font-family: $sans-serif;
+		font-size: (20 / $text-base-size) * 1em;
+	}
+}
+
+article > header {
+	padding-top: 0.5em;
+	figure {
+		margin-bottom: 0;
+	}
+}
+
+.title {
+	font-family: $display;
+	font-size: 4em;
+	color: $color-gold; 
+	float: left; 
+	line-height: 1;
+	margin-bottom: 0.25em;
+	padding-left: .5em;
+	width: 100%; 
+	.second-half {
+		display: block;
+		font-size: 2.25em;
+	}
+	label {
+		
+	}
+	.wf-inactive &, 
+	.mti-loading & {
+		font-family: $serif-fallback;
+		margin-top: -0.75em;
+		margin-bottom: 1.9em;
+		text-transform: uppercase;
+		.second-half {
+			font-size: 3; 
+			line-height: 0.8;
+			letter-spacing: 0.1em;
+		}
+	}
+}
+
+.author {
+	display: block;
+	font-family: $serif;
+	font-style: italic; 
+	text-align: right; 
+	width: 20em; 
+	float: right;
+	padding-right: 1em;
+	margin-bottom: 2em;
+}
+
+
+/* paragraph styles */
+p {
+	padding-bottom: 1em;
+	&.right {
+		padding-left: 1em;
+		padding-right: 1em;
+		.border-left & {
+				padding-left: 0;
+				padding-right: 5em;
+		}
+		padding-left: 0;
+		padding-right: 5em;
+	}
+
+	&.left {
+		padding-left: 5em;
+		.border-right & {
+			padding-right: 2em;
+		}
+	}
+	&.intro {
+		font-size: (20 / $text-base-size) * 1em; 
+		color: $color-blue;
+	}
+	&.opening.blue {
+		position: relative;
+	}
+	&.opening.rust {
+		position: relative;
+	}
+	&.closing {
+		position: relative;
+	}
+}
+/* /layout styles */
+
+img {
+	width: 100%; 
+	max-width: 100%; 
+	height: auto;
+}
+
+
+figure {
+	margin-bottom: 0;
+	position: relative;
+	&.content-narrow {
+		padding-right: 10%;
+		&.left {
+			padding-left: 5em;
+			.border-right &.half {
+				padding-left: 5em;
+			}
+		}
+		.border-right & {
+			margin-left: 0;
+		}
+	}
+	&.pad-bottom {
+		margin-bottom: 2em;
+	}
+	.border-right &.full-width {
+		margin-left: -3em;
+		width: auto;
+	}
+	.border-right &.half.left {
+		margin-left: -3em; 
+		width: 55%;
+	}
+}
+figcaption {
+	font-family: $serif;
+	font-size: (12 / $text-base-size) * 1em; 
+	font-style: italic;
+	color: $color-gray;
+	padding: 0.25em;
+	&.right-side {
+
+	}
+	&.above {
+		position: absolute; 
+		top: -3em; 
+		left: 0;
+	}
+	&.right-side-above {
+
+	}
+}
+
+
+
+
+/* Blockquote styles */
+
+blockquote {
+	margin: 1em auto;
+	p {
+		width: 90%; 
+		margin: 0 auto 0 auto; 
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+		padding-right: 0;
+		font-size: 2.25em; 
+		line-height: 1.2em; 
+		text-indent: 0;
+		font-family: $serif; 
+		font-style: italic; 
+		font-weight: 200; 
+		position: relative;
+		&:before {
+			content: "\201C";
+			font-family: $serif;
+			font-size: 1.5em;
+			font-style: italic; 
+			font-weight: 200;
+			//color: lighten($text-color, 15%);
+			position: absolute;
+			top: 0.45em;
+			left: -0.45em;
+		}
+		
+		&:after {
+			content: "\201D"; 
+			font-family: $serif;
+			font-size: 1.5em;
+			font-style: italic; 
+			font-weight: 200;
+			//color: lighten($text-color, 15%);
+			position: relative;
+			bottom: -0.2em;
+			right: 0.05em; 
+			display: inline;
+		    line-height: .2em;
+		}
+	}
+	&.float-left {
+		p {
+			&:before {
+				display: inline;
+				position: relative;
+				left: -0.1em;
+				top: 0.2em;
+			}
+			&:after {
+				position: absolute; 
+				bottom: 0.85em;
+				right: -0.35em;
+			}
+		}
+	}
+	.layout &.float-right {
+		width: 40%; 
+		margin-right: 10%;
+	}
+	&.rust {
+		p {
+			color: $color-rust;
+		}
+	}
+	&.gold-pale {
+		p {
+			color: $color-gold-pale;
+		}
+	}
+	&.blue {
+		p {
+			color: $color-blue;
+		}
+	}
+	&.blue-pale {
+		p {
+			color: $color-blue-pale;
+		}
+	}
+	&.orange {
+		p {
+			color: $color-orange;
+		}
+	}
+}
+
+
+
+/* Make sure this is last - helps correct for an orientation scale bug in iOS */
+
+@media screen and (orientation:landscape) and (device-width:320px) and (device-height: 480px) {
+	body {
+		width: 480px;
+	}
+}/*/mediaquery*/
+
