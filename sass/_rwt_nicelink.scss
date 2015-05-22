@@ -1,6 +1,6 @@
 /* This mixin is meant to give a nicer link underline that sits comfortably below the text and uses text shadow to knock out the underline around descenders */
 
-@mixin nicelink($link: #0000ee, $background: #ffffff, $padding: 0, $position: 0.9em ) {
+@mixin nicelink($link: #0000ee, $background: #ffffff, $padding: 0, $position: 0.95em ) {
 		color: $link;
 		padding: 0 $padding;
 		text-decoration: none;

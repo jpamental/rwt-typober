@@ -806,7 +806,7 @@ a {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(0, 45, 196, 0.85) 75%, rgba(0, 0, 0, 0));
     background-repeat: repeat-x;
     background-size: 2px 2px;
-    background-position: 0 0.9em;
+    background-position: 0 0.95em;
     display: inline;
     word-break: break-word; }
   a:visited {
@@ -822,7 +822,7 @@ a {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(0, 27, 119, 0.85) 75%, rgba(0, 0, 0, 0));
     background-repeat: repeat-x;
     background-size: 2px 2px;
-    background-position: 0 0.9em;
+    background-position: 0 0.95em;
     display: inline;
     word-break: break-word; }
   a:hover {
@@ -838,7 +838,7 @@ a {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(128, 43, 0, 0.85) 75%, rgba(0, 0, 0, 0));
     background-repeat: repeat-x;
     background-size: 2px 2px;
-    background-position: 0 0.9em;
+    background-position: 0 0.95em;
     display: inline;
     word-break: break-word; }
   a:focus {
@@ -854,7 +854,7 @@ a {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(128, 43, 0, 0.85) 75%, rgba(0, 0, 0, 0));
     background-repeat: repeat-x;
     background-size: 2px 2px;
-    background-position: 0 0.9em;
+    background-position: 0 0.95em;
     display: inline;
     word-break: break-word; }
   a:active {
@@ -870,7 +870,7 @@ a {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(128, 43, 0, 0.85) 75%, rgba(0, 0, 0, 0));
     background-repeat: repeat-x;
     background-size: 2px 2px;
-    background-position: 0 0.9em;
+    background-position: 0 0.95em;
     display: inline;
     word-break: break-word; }
 
