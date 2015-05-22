@@ -149,6 +149,9 @@ body {
 		//width: 100%;
 		@media (min-width: $mq-l-tab) {
 			width: 50%; 
+			&.intro {
+				width: 65%;
+			}
 		}
 	}
 	.two-thirds {
@@ -197,6 +200,80 @@ body {
 	}
 }
 
+/* heading and title styles */
+.page > header {
+	margin-bottom: 1em;
+	h1 {
+		font-family: $sans-serif;
+		font-size: (20 / $text-base-size) * 1em;
+		@media (min-width: $mq-l-tab) { 
+			font-size: (24 / $text-base-size) * 1em;
+			margin-bottom: 1.5em;
+		}
+	}
+}
+
+article > header {
+	padding-top: 0.5em;
+	@media (min-width: $mq-l-tab) { 
+		padding-top: 2em;
+	}
+	figure {
+		margin-bottom: 0;
+	}
+}
+
+.title {
+	font-family: $display;
+	font-size: 7vw;
+	color: $color-gold; 
+	float: left; 
+	line-height: 1;
+	margin-right: -100%; 
+	margin-bottom: 1em;
+	padding-left: .5em;
+	width: 100%; 
+	@media (min-width: $mq-s-tab) { 
+		font-size: 6vw;
+	}
+	@media (min-width: $mq-l-tab) { 
+		font-size: 4vw;
+		margin-top: -0.75em;
+		padding-left: 0;
+	}
+	.second-half {
+		display: block;
+		font-size: 2.25em;
+		@media (min-width: $mq-l-tab) { 
+			font-size: 3.25em;
+		}
+	}
+	label {
+		
+	}
+	.wf-inactive & {
+		
+	}
+}
+
+.author {
+	display: block;
+	font-family: $serif;
+	font-style: italic; 
+	text-align: right; 
+	width: 20em; 
+	float: right;
+	padding-right: 1em;
+	@media (min-width: $mq-l-tab) { 
+		padding-right: 3em;
+	}
+	.wf-inactive & {
+		font-family: $serif-fallback;
+		margin-bottom: 0.05em;
+	}
+}
+
+
 /* paragraph styles */
 p {
 	@include otfeatures($liga: 1, $kern: 1);
@@ -205,12 +282,23 @@ p {
 		padding-left: 1em;
 		padding-right: 1em;
 		.border-left & {
+			@media (min-width: $mq-l-tab) {
+				padding-left: 0;
+				padding-right: 2em;
+			}
+			@media (min-width: $mq-m-desk) {
+				padding-left: 0;
+				padding-right: 5em;
+			}
+		}
 		@media (min-width: $mq-l-tab) {
 			padding-left: 0;
-			padding-right: 5em;
+			padding-right: 2em;
+			&.intro {
+				padding-right: 4em;
+			}
 		}
-		}
-		@media (min-width: $mq-l-tab) {
+		@media (min-width: $mq-m-desk) {
 			padding-left: 0;
 			padding-right: 5em;
 		}
@@ -265,8 +353,11 @@ p {
 		&:after {
 			content: url(../images/arrow_left.png);
 			position: absolute; 
-			bottom: 0;
-			right: -5em;
+			bottom: -1em;
+			right: 0;
+			@media (min-width: $mq-l-tab) {
+				right: -5em;
+			}
 		}
 	}
 }
@@ -348,10 +439,25 @@ figcaption {
 	&.right-side {
 		@media (min-width: $mq-l-tab) {
 			position: absolute; 
-			right: -38%;
-			top: 40%;
+			right: -48%;
+			top: 27%;
 			width: 62.5%;
 			@include transform(rotate(-90deg), origin(top, right));
+		}
+		@media (min-width: $mq-desk) {
+			position: absolute; 
+			right: -43%;
+			top: 33%;
+		}
+		@media (min-width: $mq-m-desk) {
+			position: absolute; 
+			right: -40%;
+			top: 37%;
+		}
+		@media (min-width: $mq-l-desk) {
+			position: absolute; 
+			right: -38%;
+			top: 40%;
 		}
 	}
 	&.above {
@@ -362,88 +468,28 @@ figcaption {
 	&.right-side-above {
 		@media (min-width: $mq-l-tab) {
 			position: absolute; 
+			right: -14%;
+			top: -40%;
+			width: 40%;
+			@include transform(rotate(-90deg), origin(top, right));
+		}
+		@media (min-width: $mq-desk) {
+			position: absolute; 
+			right: -11%;
+			top: -35%;
+			width: 35%;
+		}
+		@media (min-width: $mq-m-desk) {
+			position: absolute; 
 			right: -11%;
 			top: -29%;
 			width: 30%;
-			@include transform(rotate(-90deg), origin(top, right));
 		}
 	}
 }
 
 
 
-h1 {
-	//@include otfeatures($liga: 1, $clig: 1, $dlig: 1, $kern: 1);
-}
-
-.page > header {
-	margin-bottom: 1em;
-	h1 {
-		font-family: $sans-serif;
-		font-size: (20 / $text-base-size) * 1em;
-		@media (min-width: $mq-l-tab) { 
-			font-size: (24 / $text-base-size) * 1em;
-			margin-bottom: 1.5em;
-		}
-	}
-}
-
-article > header {
-	padding-top: 0.5em;
-	@media (min-width: $mq-l-tab) { 
-		padding-top: 2em;
-	}
-	figure {
-		margin-bottom: 0;
-	}
-}
-
-.title {
-	font-family: $display;
-	font-size: 7vw;
-	color: $color-gold; 
-	float: left; 
-	line-height: 1;
-	margin-right: -100%; 
-	margin-bottom: 1em;
-	padding-left: .5em;
-	width: 100%; 
-	@media (min-width: $mq-l-tab) { 
-		font-size: 4vw;
-		margin-top: -0.75em;
-		padding-left: 0;
-	}
-	.second-half {
-		display: block;
-		font-size: 2.25em;
-		@media (min-width: $mq-l-tab) { 
-			font-size: 3.25em;
-		}
-	}
-	label {
-		
-	}
-	.wf-inactive & {
-		
-	}
-}
-
-.author {
-	display: block;
-	font-family: $serif;
-	font-style: italic; 
-	text-align: right; 
-	width: 20em; 
-	float: right;
-	padding-right: 1em;
-	@media (min-width: $mq-l-tab) { 
-		padding-right: 3em;
-	}
-	.wf-inactive & {
-		font-family: $serif-fallback;
-		margin-bottom: 0.05em;
-	}
-}
 
 /* Blockquote styles */
 

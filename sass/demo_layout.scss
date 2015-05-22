@@ -19,7 +19,6 @@
 @media (min-width: $mq-s-tab) {
 	.page {
 		width: 96%; 
-		max-width: 38em;
 		margin: 0 auto; /* make sure the page area stays centered */
 		> header {
 			padding: 0 0.75em;
@@ -36,7 +35,6 @@
 @media (min-width: $mq-l-tab) {
 	.page {
 		width: 94%; 
-		max-width: 40em;
 		margin: 0 auto; /* make sure the page area stays centered */
 		> header {
 			padding: 0 0.75em;

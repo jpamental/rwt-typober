@@ -18,7 +18,6 @@
 @media (min-width: 25em) {
   .page {
     width: 96%;
-    max-width: 38em;
     margin: 0 auto;
     /* make sure the page area stays centered */ }
     .page > header {
@@ -28,7 +27,6 @@
 @media (min-width: 43.75em) {
   .page {
     width: 94%;
-    max-width: 40em;
     margin: 0 auto;
     /* make sure the page area stays centered */ }
     .page > header {
