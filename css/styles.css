@@ -5,6 +5,7 @@
 /* 900px */
 /* 1100px */
 /* 1300px */
+/* Set theme mixins here */
 /*! normalize.css v1.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -465,20 +466,37 @@ fieldset {
 textarea {
   resize: vertical; }
 
-/* Minimal page design to provide visual structure */
-body, p, caption, th, td, input, textarea, legend, fieldset {
+p, caption, th, td, input, textarea, legend, fieldset {
   color: #6F6F6E;
-  font-family: "Fira Sans", Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-  line-height: 1.4; }
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
+  font-size: 1em; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+  color: #2f2f2f;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif; }
+
+h2 {
+  color: #2f2f2f;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif; }
+
+h3 {
+  color: #2f2f2f;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif; }
+
+h4 {
+  color: #2f2f2f;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif; }
+
+h5 {
+  color: #2f2f2f;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif; }
+
 h6 {
-  font-family: Georgia, "Times New Roman", Times, serif; }
+  color: #2f2f2f;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif; }
 
+/* Minimal page design to provide visual structure */
+/* layout styles */
 body {
   background-color: #fff; }
 
@@ -487,19 +505,226 @@ body {
   margin-top: 1em;
   margin-bottom: 2em; }
 
+.layout {
+  clear: both;
+  margin-bottom: 2em;
+  padding-bottom: 0;
+  *zoom: 1; }
+  .layout:before, .layout:after {
+    content: " ";
+    display: table; }
+  .layout:after {
+    clear: both; }
+  .layout.border-left {
+    border-left: 1em solid #6F6F6E;
+    padding-right: 1em; }
+    .layout.border-left.half {
+      padding-right: 0; }
+  .layout.border-right {
+    border-right: 1em solid #6F6F6E;
+    padding-left: 1em; }
+    .layout.border-right.half {
+      padding-left: 0; }
+  .layout.blue {
+    border-color: #586F91; }
+  .layout.blue-pale {
+    border-color: #93BDC5; }
+  .layout.rust {
+    border-color: #C06B54; }
+  .layout.gold-pale {
+    border-color: #DFC066; }
+  .layout.orange {
+    border-color: #ED6D0F; }
+  .layout .two-thirds {
+    width: 66%; }
+  .layout .full-width {
+    clear: both;
+    width: 100%; }
+  .layout .left {
+    clear: left;
+    float: left; }
+  .layout .right {
+    clear: right;
+    float: right; }
+  .layout .clear {
+    clear: both; }
+  .layout.float-left {
+    float: left;
+    clear: left; }
+  .layout.float-right {
+    float: right;
+    clear: right; }
+  .layout .float-left {
+    padding-right: 1em;
+    text-align: right; }
+  .layout .float-right {
+    padding-left: 1em;
+    text-align: left; }
+
+/* heading and title styles */
+.page > header {
+  margin-bottom: 1em; }
+  .page > header h1 {
+    font-family: "MTI Letter Gothic W01", Helvetica, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font-size: 1.25em; }
+
+article > header {
+  padding-top: 0.5em; }
+  article > header figure {
+    margin-bottom: 0; }
+
+.title {
+  font-family: "ITC Magnifico W01", Georgia, "Times New Roman", Times, serif;
+  font-size: 4em;
+  color: #CBBBA0;
+  float: left;
+  line-height: 1;
+  margin-bottom: 0.25em;
+  padding-left: .5em;
+  width: 100%; }
+  .title .second-half {
+    display: block;
+    font-size: 2.25em; }
+  .wf-inactive .title, .mti-loading .title {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin-top: -0.75em;
+    margin-bottom: 1.9em;
+    text-transform: uppercase; }
+    .wf-inactive .title .second-half, .mti-loading .title .second-half {
+      font-size: 3;
+      line-height: 0.8;
+      letter-spacing: 0.1em; }
+
+.author {
+  display: block;
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  text-align: right;
+  width: 20em;
+  float: right;
+  padding-right: 1em;
+  margin-bottom: 2em; }
+
+/* paragraph styles */
+p {
+  padding-bottom: 1em; }
+  p.right {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-left: 0;
+    padding-right: 5em; }
+    .border-left p.right {
+      padding-left: 0;
+      padding-right: 5em; }
+  p.left {
+    padding-left: 5em; }
+    .border-right p.left {
+      padding-right: 2em; }
+  p.intro {
+    font-size: 1.25em;
+    color: #586F91; }
+  p.opening.blue {
+    position: relative; }
+  p.opening.rust {
+    position: relative; }
+  p.closing {
+    position: relative; }
+
+/* /layout styles */
 img {
   width: 100%;
   max-width: 100%;
   height: auto; }
 
 figure {
-  margin-bottom: 2em; }
+  margin-bottom: 0;
+  position: relative; }
+  figure.content-narrow {
+    padding-right: 10%; }
+    figure.content-narrow.left {
+      padding-left: 5em; }
+      .border-right figure.content-narrow.left.half {
+        padding-left: 5em; }
+    .border-right figure.content-narrow {
+      margin-left: 0; }
+  figure.pad-bottom {
+    margin-bottom: 2em; }
+  .border-right figure.full-width {
+    margin-left: -3em;
+    width: auto; }
+  .border-right figure.half.left {
+    margin-left: -3em;
+    width: 55%; }
 
 figcaption {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 0.875em;
-  text-align: right;
-  color: #9f9f9f; }
+  font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
+  font-size: 0.75em;
+  font-style: italic;
+  color: #6F6F6E;
+  padding: 0.25em; }
+  figcaption.above {
+    position: absolute;
+    top: -3em;
+    left: 0; }
+
+/* Blockquote styles */
+blockquote {
+  margin: 1em auto; }
+  blockquote p {
+    width: 90%;
+    margin: 0 auto 0 auto;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    padding-right: 0;
+    font-size: 2.25em;
+    line-height: 1.2em;
+    text-indent: 0;
+    font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-weight: 200;
+    position: relative; }
+    blockquote p:before {
+      content: "\201C";
+      font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
+      font-size: 1.5em;
+      font-style: italic;
+      font-weight: 200;
+      position: absolute;
+      top: 0.45em;
+      left: -0.45em; }
+    blockquote p:after {
+      content: "\201D";
+      font-family: "Cardamon W04", Georgia, "Times New Roman", Times, serif;
+      font-size: 1.5em;
+      font-style: italic;
+      font-weight: 200;
+      position: relative;
+      bottom: -0.2em;
+      right: 0.05em;
+      display: inline;
+      line-height: .2em; }
+  blockquote.float-left p:before {
+    display: inline;
+    position: relative;
+    left: -0.1em;
+    top: 0.2em; }
+  blockquote.float-left p:after {
+    position: absolute;
+    bottom: 0.85em;
+    right: -0.35em; }
+  .layout blockquote.float-right {
+    width: 40%;
+    margin-right: 10%; }
+  blockquote.rust p {
+    color: #C06B54; }
+  blockquote.gold-pale p {
+    color: #DFC066; }
+  blockquote.blue p {
+    color: #586F91; }
+  blockquote.blue-pale p {
+    color: #93BDC5; }
+  blockquote.orange p {
+    color: #ED6D0F; }
 
 /* Make sure this is last - helps correct for an orientation scale bug in iOS */
 @media screen and (orientation: landscape) and (device-width: 320px) and (device-height: 480px) {
