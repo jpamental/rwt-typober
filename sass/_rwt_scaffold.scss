@@ -80,11 +80,13 @@ p, caption, th, td, input, textarea, legend, fieldset {
 		font-size: (($body-copy-size-l) / $text-base-size) * 1em;
 		line-height: ($body-copy-lh-l / $body-copy-size-l);
 	}
-	.wf-inactive & {
+	.wf-inactive &, 
+	.mti-loading & {
 		font-family: $serif-fallback;
 		font-size: 0.985em;
 		letter-spacing: 0.025em;
 		word-spacing: 0.07em;
+		line-height: 1.64;
 		@media (min-width: $rwt-mq-s-tab) {
 			
 		}
@@ -98,7 +100,8 @@ p, caption, th, td, input, textarea, legend, fieldset {
 			
 		}
 	}
-	.wf-inactive.uncorrected & {
+	.wf-inactive.uncorrected &, 
+	.mti-loading.uncorrected & {
 		font-size: inherit; 
 		line-height: inherit; 
 		letter-spacing: inherit;
@@ -145,7 +148,8 @@ h1 {
 		margin-top: (60 / $h1-size-l-desk) * 1em;
 		margin-bottom: (30 / $h1-size-l-desk) * 1em;
 	}
-	.wf-inactive & {
+	.wf-inactive &, 
+	.mti-loading & {
 		font-family: $serif-fallback;
 		@media (min-width: $rwt-mq-s-tab) {
 			
@@ -212,7 +216,8 @@ h2 {
 		margin-left: 0;
 		margin-right: 0;
 	}
-	.wf-inactive & {
+	.wf-inactive &, 
+	.mti-loading & {
 		font-family: $serif-fallback;
 		@media (min-width: $rwt-mq-s-tab) {
 			
@@ -278,7 +283,8 @@ h3 {
 		margin-left: 0;
 		margin-right: 0;
 	}
-	.wf-inactive & {
+	.wf-inactive &, 
+	.mti-loading & {
 		font-family: $serif-fallback;
 		@media (min-width: $rwt-mq-s-tab) {
 			
@@ -341,7 +347,8 @@ h4 {
 		margin-left: 0;
 		margin-right: 0;
 	}
-	.wf-inactive & {
+	.wf-inactive &, 
+	.mti-loading & {
 		font-family: $serif-fallback;
 		@media (min-width: $rwt-mq-s-tab) {
 			
@@ -374,7 +381,8 @@ h5 {
 	@media (min-width: $rwt-mq-l-desk) {
 		
 	}
-	.wf-inactive & {
+	.wf-inactive &, 
+	.mti-loading & {
 		font-family: $serif-fallback;
 		@media (min-width: $rwt-mq-s-tab) {
 			
@@ -406,7 +414,8 @@ h6 {
 	@media (min-width: $rwt-mq-l-desk) {
 		
 	}
-	.wf-inactive & {
+	.wf-inactive &, 
+	.mti-loading & {
 		font-family: $serif-fallback;
 		@media (min-width: $rwt-mq-s-tab) {
 			
